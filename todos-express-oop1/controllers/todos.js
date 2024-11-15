@@ -2,7 +2,7 @@ import { Todo } from "../models/todo.js"
 
 class todoController {
     constructor(){
-        this.TIDIS = []
+        this.TODOS = []
     }
 
     createTodo(req, res){
@@ -14,6 +14,11 @@ class todoController {
             newTask: newTodo
         })
     }
+    getTodos(req, res){
+        res.json({tasks: this.TODOS})
+    }
 }
 
-export const todoController = new todoController()
+
+
+export const TodoController = new todoController()
