@@ -1,8 +1,9 @@
-import express, { router } from "express"
-import { todoController } from "../controllers/todos.js"
+import express, { Router } from 'express'
+import { TodoController } from "../controllers/todos.js"
 
 const router = Router()
 
-router.post("/new-todo", (req,res) => todoController.create)
+router.post("/new-todo", (req, res) => TodoController.createTodo(req, res))
+router.get("/", (req, res) => TodoController.getTodos(req, res))
 
 export default router
